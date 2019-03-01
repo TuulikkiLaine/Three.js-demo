@@ -3,7 +3,9 @@ let ADD = 0.001;
 let theta = 0;
 const planets = [];
 const LEFT = 37,
-  RIGHT = 39;
+  RIGHT = 39,
+  UP = 38,
+  DOWN = 40;
 
 const createSpace = () => {
   texture = new THREE.TextureLoader().load("./img/space.png");
@@ -40,7 +42,11 @@ class Planet {
 
 const onKeyDown = function(e) {
   if (e.keyCode == LEFT || e.keyCode == RIGHT) ADD *= -1;
-  else return;
+  else if (e.keyCode == UP) {
+    ADD += 0.001;
+  } else if (e.keyCode == DOWN) {
+    ADD -= 0.001;
+  } else return;
 };
 
 const init = () => {
