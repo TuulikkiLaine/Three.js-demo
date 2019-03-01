@@ -1,0 +1,41 @@
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.icons {
+  z-index: 1000;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  color: #fff;
+  display: flex;
+  font-family: helvetica;
+}
+
+.icons > div {
+  margin-right: 10px;
+}
+
+.icons > div:nth-child(2) > img {
+  transform: rotate(180deg);
+}
+.icons > div:nth-child(3) > img {
+  transform: rotate(90deg);
+}
+.icons > div:nth-child(4) > img {
+  transform: rotate(270deg);
+}
+
+.icons > div > img {
+  width: 100%;
+  filter: brightness(0) invert(1);
+  width: 30px;
+}
+
+.icons > div > span {
+  transform: translateY(-50%);
+  margin-left: 5px;
+  display: inline-block;
+}
