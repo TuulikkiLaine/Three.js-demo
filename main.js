@@ -43,9 +43,9 @@ class Planet {
 const onKeyDown = function(e) {
   if (e.keyCode == LEFT || e.keyCode == RIGHT) ADD *= -1;
   else if (e.keyCode == UP) {
-    ADD += 0.001;
+    ADD *= 1.5;
   } else if (e.keyCode == DOWN) {
-    ADD -= 0.001;
+    ADD *= 0.75;
   } else return;
 };
 
