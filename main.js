@@ -2,6 +2,8 @@ let scene, camera, rendered;
 let ADD = 0.001;
 let theta = 0;
 const planets = [];
+const LEFT = 37,
+  RIGHT = 39;
 
 const createSpace = () => {
   texture = new THREE.TextureLoader().load("./img/space.png");
@@ -35,6 +37,11 @@ class Planet {
     this.object.rotation.y += this.rotationSpeed;
   }
 }
+
+const onKeyDown = function(e) {
+  if (e.keyCode == LEFT || e.keyCode == RIGHT) ADD *= -1;
+  else return;
+};
 
 const init = () => {
   scene = new THREE.Scene();
@@ -70,6 +77,7 @@ const init = () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   document.body.appendChild(renderer.domElement);
+  document.addEventListener("keydown", onKeyDown, false);
 };
 
 const mainLoop = () => {
